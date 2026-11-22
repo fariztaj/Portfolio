@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fariz Muhammed — Video Editor</title>
+<style>
+:root{
+  --bg:#fff; --fg:#000; --muted:#555; --line:#000;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#000;--fg:#fff;--muted:#aaa;--line:#fff}
+}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--muted:#aaa;--line:#fff}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+}
+
+h1 {
+    font-size: clamp(2.2rem,7vw,3.6rem);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 72px 0 24px;
+}
+
+p {
+    margin: 0 0 14px;
+    max-width: 60ch;
+    font-size: 1.05rem;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* Vertical video gallery */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.video video,
+.video iframe,
+.video .ph {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    display: block;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.video h3 {
+    font-size: 1rem;
+    margin: 12px 0 2px;
+    font-weight: 600;
+}
+
+.video p {
+    font-size: .9rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    max-width: 480px;
+}
+
+li {
+    padding: 2px 0;
+}
+
+a {
+    color: var(--fg);
+    text-underline-offset: 3px;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+}
+
+footer {
+    margin-top: 80px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    main {
+        padding: 40px 16px 60px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Fariz Muhammed<br>Video Editor</h1>
+  <p>I’m a video editor who cuts clean, story-first videos. I edit in CapCut on PC and have worked on all kinds of content.</p>
+  <p class="muted">I can edit any type of video: YouTube videos, Reels and Shorts, TikToks, ads, wedding and event videos, vlogs, podcasts, and more.</p>
+
+ <h2>Work</h2>
+
+<div class="grid">
+
+    <div class="video">
+        <video autoplay muted loop playsinline preload="none">
+            <source data-src="showcase_edits/video1.mp4" type="video/mp4">
+        </video>
+        <h3>Project 01</h3>
+        <p>MotoShow Edit</p>
+    </div>
+
+    <div class="video">
+        <video autoplay muted loop playsinline preload="none">
+            <source data-src="showcase_edits/video2.mp4" type="video/mp4">
+        </video>
+        <h3>Project 02</h3>
+        <p>Bridal Reel</p>
+    </div>
+
+    <div class="video">
+        <video autoplay muted loop playsinline preload="none">
+            <source data-src="showcase_edits/video3.mp4" type="video/mp4">
+        </video>
+        <h3>Project 03</h3>
+        <p>Automotive Reel</p>
+    </div>
+
+    <div class="video">
+        <video autoplay muted loop playsinline preload="none">
+            <source data-src="showcase_edits/video4.mp4" type="video/mp4">
+        </video>
+        <h3>Project 04</h3>
+        <p>Montage Reel</p>
+    </div>
+
+</div>
+
+  <h2>Services</h2>
+  <ul>
+    <li>Cutting and pacing</li>
+    <li>Captions</li>
+    <li>Color and effects</li>
+    <li>Sound and music</li>
+    <li>Transitions</li>
+    <li>Short-form and long-form</li>
+  </ul>
+
+  <footer>
+    <p>Contact: <a href="mailto:farizmuhammed82@gmail.com">farizmuhammed82@gmail.com</a></p>
+    <p class="muted"><a href="https://instagram.com/farezmuhmd">Instagram</a></p>
+  </footer>
+</main>
+
+<script>
+/* Load showcase videos only when they are near the visitor's screen. */
+(() => {
+    const videos = document.querySelectorAll(".video video");
+
+    function loadVideo(video) {
+        if (video.dataset.loaded) return;
+        const source = video.querySelector("source[data-src]");
+        if (!source) return;
+
+        source.src = source.dataset.src;
+        source.removeAttribute("data-src");
+        video.dataset.loaded = "true";
+        video.load();
+
+        const playWhenReady = () => {
+            video.play().catch(() => {
+                /* Some browsers may require a user gesture before autoplay. */
+            });
+        };
+
+        if (video.readyState >= 2) {
+            playWhenReady();
+        } else {
+            video.addEventListener("loadeddata", playWhenReady, { once: true });
+        }
+    }
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    loadVideo(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: "180px 0px", threshold: 0.01 });
+
+        videos.forEach((video) => observer.observe(video));
+    } else {
+        videos.forEach(loadVideo);
+    }
+})();
+</script>
+</body>
+</html>
